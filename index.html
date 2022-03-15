@@ -16,12 +16,43 @@
         <fieldset>
 
             <label for="nombre">Nombre: </label>
-            <input type="text" required maxlength="50" placeholder="Óscar" name="nombre" id="nombre" required>
+            <input type="text" required maxlength="50" placeholder="Nombre" name="nombre" id="nombre" required>
+            <!-- Debe ser un número entre 18 y 99 scroll down -->
+            <label for="edad">Edad: </label>
+            <input type="number" required placeholder="18" name="edad" id="edad" min="18" max="99">
+
+            <!-- Excactamente debe tener 9 carácteres. Usa el atributo __pattern__ para formatear el DNI -->
+            <label for="dni">DNI: </label>
+            <input type="text" placeholder="12345678Z" class="form-control" size="10"  maxlength="9" name="nif" pattern="[0-9]{8}, [A-Za-z]" title="Introduzca el dni"  value="" required>
+
+            <!-- Texto libre de hasta 100 carácteres -->
+            <label for="ciudad">Ciudad de origen: </label>
+            <input type="text" required maxlength="100" placeholder="País" name="ciudad" id="ciudad">
+
+            <!-- Es un selector con 3 opciones: A pie, transporte público, trasporte privado. -->
+            <form required action="/action_page.php">
+                <label for="cars">Como vienes a estudiar:</label>
+                <select id="transport" name="cars">
+                    <option value="Selecciona 1">Selecciona uno</option>
+                    <option value="caminando">Caminando</option>
+                    <option value="bus">Bus</option>
+                    <option value="metro">Metro</option>
+                    <option value="tren">Tren</option>
+                </select>
+              </form>
+
+            <!-- texto libre de hasta 1024 palabras -->
+            <label for="objetivos">Objetivo del curso: </label>
+            <textarea name="texto" rows="4" cols="20" maxlength="1024"></textarea>
+
+
+            <label for="3 cosas sobre mí">3 cosas sobre: </label>
+            <textarea name="texto" rows="4" cols="20" maxlength="50"></textarea>
         </fieldset>
 
         <input type="submit" class="submit" id="submit" value="Enviar" />
-
     </form>
+    <script src="script.js"></script>
 </body>
 
 </html>
