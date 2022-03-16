@@ -8,22 +8,39 @@
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 
     <title>Formulario básico HTML5</title>
+    <style>
+       input:invalid {
+            box-shadow: 2px 2px 2px 1px rgba(255, 0, 0, 0.4);
+        }
+
+        input:valid {
+                        box-shadow: 2px 2px 2px 1px rgba(0, 255, 0, 0.4);
+
+        }
+
+    </style>
 </head>
 
 <body class="container">
-    <form method="post" action="">
+    <form name="presentacion" method="post" action="">
 
         <fieldset>
 
             <label for="nombre">Nombre: </label>
             <input type="text" required maxlength="50" placeholder="Nombre" name="nombre" id="nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" placeholder="correo@gmail.com" name="email" id="email" required>
+            <p id="mensaje-existe-usuario" style="color:red;display: none;">El email <span id="usuario-existente"
+                style="font-weight: 700;"></span> existe en la base de datos.</p>
+
             <!-- Debe ser un número entre 18 y 99 scroll down -->
             <label for="edad">Edad: </label>
             <input type="number" required placeholder="18" name="edad" id="edad" min="18" max="99">
 
             <!-- Excactamente debe tener 9 carácteres. Usa el atributo __pattern__ para formatear el DNI -->
             <label for="dni">DNI: </label>
-            <input type="text" placeholder="12345678Z" class="form-control" size="10"  maxlength="9" name="nif" pattern="[0-9]{8}, [A-Za-z]" title="Introduzca el dni"  value="" required>
+            <input type="text" placeholder="12345678Z" class="form-control" size="10"  maxlength="9" name="dni" pattern="[0-9]{8},[A-Za-z]" title="Introduzca el dni"  value="" required>
 
             <!-- Texto libre de hasta 100 carácteres -->
             <label for="ciudad">Ciudad de origen: </label>
